@@ -1,7 +1,7 @@
 function getWeather() {
 
     const city = document.getElementById("cityInput").value;
-    const apiKey = "a1b2c3d4e5f6g7h8";   // <-- paste your key
+    const apiKey = "21383ddec5433f843574a11abcd3ef84";
     const resultDiv = document.getElementById("weatherResult");
 
     if (city === "") {
@@ -15,7 +15,7 @@ function getWeather() {
         .then(response => response.json())
         .then(data => {
 
-            if (data.cod === "404") {
+            if (data.cod === 404) {
                 resultDiv.innerHTML = "City not found ❌";
             } else {
                 resultDiv.innerHTML = `
@@ -31,3 +31,4 @@ function getWeather() {
             resultDiv.innerHTML = "Error fetching data";
         });
 }
+
